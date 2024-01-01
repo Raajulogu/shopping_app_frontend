@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./Components/Dashboard";
+import { useState } from "react";
+import Cart from "./Components/Cart";
+import Combo from "./Components/Combo";
 
 function App() {
+  let [cart, setCart] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Dashboard cart={cart} setCart={setCart} />}
+        />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/combo/:type" element={<Combo cart={cart} setCart={setCart} />} />
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,8 @@
+.base-container{
+    height: 100vh;
+}
+.base-header{
+    position: fixed;
+    top: 0;
+    width:100vw;
+}
