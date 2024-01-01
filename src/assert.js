@@ -1,4 +1,4 @@
 let asserts = {
-    backend_url: "http://localhost:3030/api",
+    backend_url: "https://shopping-app-backend-zuii.vercel.app/api",
   };
    export default asserts
