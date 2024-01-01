@@ -82,7 +82,6 @@ const Card = ({ val, cart, setCart }) => {
     }
   }, []);
 
-
   //Handle Cart
   function handleCart() {
     if (val.discountType === "Combo" && !cart.includes(val._id)) {

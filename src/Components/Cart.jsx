@@ -8,13 +8,13 @@ import "./Cart.css";
 let api_url = asserts.backend_url;
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
@@ -68,16 +68,16 @@ const Cart = ({ cart, setCart }) => {
   }, [cart]);
 
   //Handle Buy
-  function handleBuy(){
+  function handleBuy() {
     setAmount(0);
-    setCart([])
+    setCart([]);
     handleOpen();
   }
 
-    //Modal
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+  //Modal
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <Base cart={cart}>
       <Modal
@@ -112,10 +112,9 @@ const Cart = ({ cart, setCart }) => {
             <div className="card-amount">
               <p>SubTotal({cart.length} items)</p>
               <p>Total: {amount}</p>
-              <Button
-              onClick={handleBuy}
-              variant="contained" color="warning"
-              >Proceed to Buy</Button>
+              <Button onClick={handleBuy} variant="contained" color="warning">
+                Proceed to Buy
+              </Button>
             </div>
           </div>
         </div>
@@ -139,7 +138,7 @@ const Card = ({ val, cart, setCart, amount, setAmount }) => {
   }, []);
 
   useEffect(() => {
-    let temp=Number(amount)+Number(price)
+    let temp = Number(amount) + Number(price);
     setAmount(temp);
   }, [price]);
 
@@ -150,7 +149,7 @@ const Card = ({ val, cart, setCart, amount, setAmount }) => {
         return data;
       }
     });
-    setAmount(amount-(qty*price));
+    setAmount(amount - qty * price);
     setCart([...temp]);
   }
 

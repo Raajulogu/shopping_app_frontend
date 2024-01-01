@@ -17,7 +17,10 @@ function App() {
           element={<Dashboard cart={cart} setCart={setCart} />}
         />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-        <Route path="/combo/:type" element={<Combo cart={cart} setCart={setCart} />} />
+        <Route
+          path="/combo/:type"
+          element={<Combo cart={cart} setCart={setCart} />}
+        />
       </Routes>
     </div>
   );
