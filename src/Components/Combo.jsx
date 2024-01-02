@@ -33,6 +33,7 @@ const Combo = ({ cart, setCart }) => {
 
   return (
     <Base cart={cart}>
+    <h1>Select one more product to get the Combo offer</h1>
       {data && (
         <div className="home-container">
           <div className="cart-box">
